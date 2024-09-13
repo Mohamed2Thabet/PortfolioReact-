@@ -1,0 +1,132 @@
+:root {
+  --headerMainColor:#19c8fa;
+}
+
+header {
+
+  padding: 0 10px;
+  box-shadow: 0px 0px 10px #ccc;
+  height:65px;
+  position: relative;
+  background-color: var(--primaryColor);
+  .container {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    border:rgba(63 63 70 0.4);
+    img {
+      width: 50px;
+    }
+    ul {
+      display: flex;
+      list-style: none;
+      li {
+        a {
+          color:var(--Color);
+          text-decoration: none;
+          padding: 20px 10px;
+          display: block;
+          font-size: 20px;
+          transition: .3s;
+          
+          &:hover  ,
+          &.active  {
+            color: var(--headerMainColor);
+            border-bottom: 1px solid ;
+          }
+        }
+      }
+    }
+    .menu {
+      display: none;
+      width: 20px;
+      span {
+        background-color: white;
+        height: 2px;
+        display: block;
+        margin:3px 0;
+        transition: .3s;
+        border-radius: 10px;
+        &:first-child {
+          width: 100%;
+        }
+        &:nth-child(2) {
+          width: 80%;
+          margin-left: auto;
+          margin-right: 0;
+        }
+        &:last-child {
+          width: 100%;
+        }
+      }
+      &:hover {
+        span:nth-child(2) {
+          width: 100%;
+        }
+      }
+      
+    }
+    button {
+      all: unset;
+      font-size: 25px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: .3s;
+      &:hover {
+        border:1px solid rgba(9, 125, 203);
+        background-color: var(--primaryColor);
+
+      }
+    }
+    @media (max-width:676px) {
+      ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top: 45px;
+        padding: 0;
+        margin-top: 20px;
+        transition: .3;
+        li {
+          /* height: 37px; */
+          a {
+            position: relative;
+            padding: 20px;
+            &.active,&:hover {
+              border: 0;
+            }
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            left: 0;
+            background-color: var(--headerMainColor);
+            transition: .3s;
+          }
+          &:hover::after,
+          &.active::after {
+            width: 100%;
+          }
+          }
+          
+        }
+      }
+      .menu {
+        display: block;
+      }
+      
+      .display {
+        display: flex;
+      
+      }
+    }
+  }
+  
+}

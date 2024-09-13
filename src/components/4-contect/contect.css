@@ -1,0 +1,113 @@
+.content {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  .container {
+    .title {
+      h3 {
+        font-size: 40px;
+        span {
+          margin-right: 20px;
+        }
+      }
+      p {
+        margin-top: 10px;
+        margin-bottom: 50px;
+        font-size: 20px;
+        color: gray;
+      }
+    }
+    .box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      form {
+        label {
+          margin: 20px 30px 20px 0;
+          font-size: 20px;
+          color: gray;
+          display: inline-block;
+        }
+        input,
+        textarea {
+          all: unset;
+          width: 100%;
+          padding: 15px 15px 30px;
+          display: inline-block;
+          background-color: var(--primaryColor);
+          border-radius: 20px;
+          border: 1px solid rgb(93, 188, 252);
+          margin-bottom:30px;
+
+          &:focus {
+            border: 1px solid rgba(9, 125, 203);
+          }
+        }
+        textarea {
+          height: 100px;
+        }
+        button {
+          all: unset;
+          display: inline-block;
+          padding: 10px 20px;
+          border: 1px solid rgb(93, 188, 252);
+          border-radius: 10px;
+          font-size: 20px;
+          cursor: pointer;
+          &:hover , &:focus{
+            background-color: var(--primaryColor);
+            scale: .9;
+            
+          }
+        }
+      }
+      
+      .image {
+        position: relative;
+        width: 500px;
+        
+        img {
+          animation: tops-and-downs 5s linear infinite;
+          position: absolute;
+          top: -100px;
+        width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@keyframes tops-and-downs {
+  0%,
+  100% {
+    top: -170px;
+  }
+  50% {
+    top: -110px;
+  }
+}
+
+
+
+@media (max-width:991px) {
+  .content {
+    
+    .container {
+      text-align: center;
+      .box {
+        form {
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+          input,
+        textarea {
+            padding: 15px 0;
+          }
+        }
+        .image {
+          display: none;
+        }
+      }
+    }
+  }
+}
